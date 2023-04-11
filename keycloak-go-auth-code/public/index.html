@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Keycloak OAuth2 Example (Auth code flow)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+                body {
+                        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                        text-align: center;
+
+                }
+
+                p {
+                        width: 68%;
+                }
+        </style>
+
+</head>
+
+<body><br><br><br><br><br><br><br><br><br><br>
+        <a id="XLinked" href="http://some.magic.url">Login with keycloak</a>
+        <script>
+                //Do something in background
+                const OA2Config = class {
+                        constructor() {
+
+                        }
+                }
+
+                const oac = new OA2Config();
+                const XLinked = "XLinked";
+
+                fetch("client.json?t=" + Date.now().toString())
+                        .then(response => (response.json()))
+                        .then(json => $X(json));
+                const $X = ($J) => {
+                        oac.$c = $J;
+
+                        var link = document.getElementById(XLinked);
+                        link.href = $J["auth_url"] + "?response_type=code&client_id=" + $J["client_id"] + "&redirect_uri=" + $J["redirect_url"] + $J["redirect_uri"];
+
+                };
+        </script>
+</body>
+
+</html>

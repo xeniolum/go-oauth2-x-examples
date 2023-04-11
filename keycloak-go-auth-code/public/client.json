@@ -1,0 +1,10 @@
+{
+    "client_id":"oauth-test-realm",
+    "client_secret":"oauth-test-realm-secret-to-be-replaced",
+    "token_url":"http://localhost:8080/realms/oauth-test/protocol/openid-connect/token",
+    "auth_url":"http://localhost:8080/realms/oauth-test/protocol/openid-connect/auth",
+    "user_url":"http://localhost:8080/realms/oauth-test/protocol/openid-connect/userinfo",
+    "redirect_url":"http://localhost:8082",
+    "redirect_uri":"/oauth/redirect",
+    "version":"v202301"
+}

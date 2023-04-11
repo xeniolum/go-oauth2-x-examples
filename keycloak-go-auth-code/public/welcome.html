@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<style type="text/css">
+		body {
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			text-align: center;
+
+		}
+
+		p {width: 68%;}
+		</style>
+
+	<title>Hello Keycloak User</title>
+</head>
+
+<body>
+	<br><br><br><br><br><br>
+	<h3>The Server Says:</h3>
+<div id="x-auth-welcome">Some default text.</div>
+</body>
+<script>
+
+	const query = window.location.search.substring(1)
+	const token = query.split('access_token=')[1]
+
+	user_url = "/oauth/userinfo?access_token=" + token;
+
+	fetch(user_url, {
+		headers: {
+		}
+	}).then(res => res.json())
+		.then(res => {
+			document.getElementById('x-auth-welcome').innerText =`Welcome, ${res.name}`;
+		})
+</script>
+
+</html>
