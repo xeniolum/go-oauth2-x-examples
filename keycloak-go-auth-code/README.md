@@ -15,7 +15,7 @@ In order to run the application:
 5. Navigate to `http://localhost:8082` on your browser.
 
 About the OAuth2 auth-code grant flow (which is the most important OAuth2 flow):
-1. Start the application, you will see a link which says: `Login with keycloak` and when you click on that link and if you correctly setup values in `public/config.json`, the link will bring you to Keycloak realm login page. (This step your Client ID and Client secret will be sent to Keycloak.)
+1. Start the application, you will see a link which says: `Login with keycloak` and when you click on that link and if you correctly setup values in `public/config.json`, the link will bring you to Keycloak realm login page. (This step your Client ID will be sent to Keycloak and the OAuth2 `reponse_type` is required to be `code`.)
 
 2. If you successfully login, your browser will be redirected to `/oauth/redirect` with generated `auth code` sent back.
 
