@@ -1,14 +1,14 @@
-## Keycloak Go OAuth2 Auth-code Flow Example
+## Keycloak Go OAuth2 `Client` Auth-code Flow Example
 
-This is an example golang application that interacts with a Keycloak instance by implementing OAuth2 auth-code grant flow. The program is tested against `Keycloak 19.0.0`.
+This is an example golang application that interacts with a Keycloak instance as a `client` implementing OAuth2 auth-code grant flow. The program is tested against `Keycloak 19.0.0`.
 
 In order to run the application:
 
 1. Set up a new realm (after login to your keycloak using admin) named `oauth-test` if it does not exist.
 
-2. Setup your new application in keycloak : e.g. `http://localhost:8080/admin/master/console/#/<realm>/clients`. In `Client ID` field enter a <Client ID> (non empty ASCII text what will not be conflit with existing client settings). In the `Root URL` and `Home URL` field, enter `http://localhost:8082`, and in `Valid redirect URI` enter `/oauth/redirect`. Save and in `Credentials` tab you will see the generated credentials (including `client secret`).
+2. Setup your new application in keycloak : e.g. `http://localhost:8080/admin/master/console/#/<realm>/clients`. In `Client ID` field enter a `Client ID` (non empty ASCII text what will not be conflit with existing client settings). In the `Root URL` and `Home URL` field, enter `http://localhost:8082`, and in `Valid redirect URI` enter `/oauth/redirect`. Save and in `Credentials` tab you will see the generated credentials (including `client secret`).
 
-3. Replace the values of the <ClientID>, <ClientSecret>, <token URL>, <auth URL> and <userinfo URL> in the `public/config.json` file which will be pickedup by both the front end (the htmls) and the backend (`main.go`). The values typically can be found from your Keycloak console page under `Realm settings/OpenID Endpoint Configuration` after you login to the console and select right Keycloak realm. Typically the [index.html] (which is under `public`) does not need to be changed. 
+3. Replace the values of the `ClientID`, `ClientSecret`, `token URL`, `auth URL` and `userinfo URL` in the `public/config.json` file which will be pickedup by both the front end (the htmls) and the backend (`main.go`). The values typically can be found from your Keycloak console page under `Realm settings/OpenID Endpoint Configuration` after you login to the console and select right Keycloak realm. Typically the [index.html] (which is under `public`) does not need to be changed. 
 
 4. Start the server by executing `go run main.go`
 
