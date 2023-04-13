@@ -1,0 +1,12 @@
+{
+    "client_id":"oauth-test",
+    "client_secret":"oauth-test-cient-secret",
+    "token_url":"http://localhost:8080/realms/oauth-realm/protocol/openid-connect/token",
+    "auth_url":"http://localhost:8080/realms/oauth-realm/protocol/openid-connect/auth",
+    "user_url":"http://localhost:8080/realms/oauth-realm/protocol/openid-connect/userinfo",
+    "redirect_url":"http://localhost:8082",
+    "redirect_uri":"/oauth/redirect",
+    "login_uri":"/oauth/login",
+    "user_info":"/oauth/userinfo",
+    "version":"v202301"
+}
